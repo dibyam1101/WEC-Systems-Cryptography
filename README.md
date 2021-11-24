@@ -15,7 +15,7 @@ Upon further analysis, it was found that the code obtained from the QR code was 
 
     Afterwards, from the complete intermediate string, make groups of 6 starting from the left. If some bits cannot be made into groups of 6 in the end, append zeroes so the the grouping becomes possible. Also, for every 2 Zeroes appended, append one '='.
 
-    Each of these 6 digit binary numbers represnt a number between 0-63 which act as indices for the BASE-64 CHARSET. (For example, if one grouping of 6 is 110001, the corresponding decimal value is 49 which corresponds to the 48th letter of the Base-64 Charset)
+    Each of these 6 digit binary numbers represnt a number between 0-63 which act as indices for the BASE-64 CHARSET. (For example, if one grouping of 6 is 110001, the corresponding decimal value is 49 which corresponds to the 49th letter of the Base-64 Charset)
 
     The decoding process is also simple. For each character in the encoded message, find out its position in the base-64 char-set and append the corresponding 6 digit binary to some intermediate string. 
 
