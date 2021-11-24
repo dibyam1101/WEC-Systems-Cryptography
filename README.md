@@ -5,6 +5,7 @@
 The QR code in the vaccination certificate was altered since  verify.cowin.gov.in gave a negative result. So, the QR was scanned and some encoded text was obtained. 
 
 ## Second Challenge
+R3JlYXQgam9iLiBKdWxpdXMgQ2Flc2VyIHdhcyBib3JuIGluIHRoZSAxMDAgQkM6ClBEQSBKQVRQIFlFTERBTiBHQVVPTVFXTkEgRU8gUERBIFdITERXWEFQTyBTRVBES1FQIEYKT1BYV09EUFNLUUxPTkNYUU5VSkVPTFhQV0FFSE1PVVpPRVFYWFZLVUpPV0JMTVdYUFFVSU9FTFBNWUtZRUhNT0dPS1lRWEFYS1lLRExZUVpZTFlIQVdXQkxNV1hRWUxXVldPWQ==
 
 Upon further analysis, it was found that the code obtained from the QR code was indeed a BASE-64 code. 
 
@@ -81,3 +82,33 @@ Finally, after applying this process we get another instruction, but this time i
 
 ## Fifth Challenge
 
+The following text was obtained after the previous step
+
+RSAENCRYPTNUMBERTWOHUNDREDFOURTYTHREEWITHNVALUEASTWOTHOUSANDFOURHUNDREDANDNINETEENANDEVALUEASELEVENX 
+
+RSA ENCRYPT NUMBER TWO HUNDRED FOURTY THREE WITH NVALUE AS TWO THOUSAND FOUR HUNDRED AND NINETEEN AND EVALUE AS ELEVENX
+
+Clearly it instructs us to encrypt the number 243 using the RSA system with the N value as 2419 and the E value as 11 (The letter X is a bogus letter and can be ignored).
+
+* ### RSA encryption->
+    The RSA encrytion is a fairly complex encrytion process. However for this instruction, basic knowledge of RSA sufficed. 
+
+    Basically, the ordered pair (n, e) forms a public key which can then be used to encrypt some numerical message M
+
+    E_M = M<sup>e</sup>%N
+
+    where E_M is the encrypted message
+
+M, e and N were given as 243, 11 and 2419 respectively. Finally the encrypted message was obtained. 
+
+## Sixth Challenge
+From the previous task , the number 1982 was obtained. Not much was clear as to what was to be done with this number. But it seemed like the Vault's password. BOOM! 1982 opened the ZIP file (dontopen.zip) and the contents of the file inside were discovered. 
+
+## Seventh and Final Challenge
+The contents of the dontsee.txt file were also encrypted without any hint about the method used to encrypt the message.
+
+TM, DTZ KTZSI RJ😔. HTSLWFYX. YMNX NX YMJ JSILTFQ. TW NX NY?🤨
+
+ So , a brute force Caesar Cipher was tried and BOOM, for a +5 offset(from the original message), the hidden message was found which said 
+
+ OH, YOU FOUND ME😔. CONGRATS. THIS IS THE ENDGOAL. OR IS IT?🤨
