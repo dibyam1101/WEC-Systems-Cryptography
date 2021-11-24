@@ -5,7 +5,7 @@
 The QR code in the vaccination certificate was altered since  verify.cowin.gov.in gave a negative result. So, the QR was scanned and some encoded text was obtained. 
 
 ## Second Challenge
-R3JlYXQgam9iLiBKdWxpdXMgQ2Flc2VyIHdhcyBib3JuIGluIHRoZSAxMDAgQkM6ClBEQSBKQVRQIFlFTERBTiBHQVVPTVFXTkEgRU8gUERBIFdITERXWEFQTyBTRVBES1FQIEYKT1BYV09EUFNLUUxPTkNYUU5VSkVPTFhQV0FFSE1PVVpPRVFYWFZLVUpPV0JMTVdYUFFVSU9FTFBNWUtZRUhNT0dPS1lRWEFYS1lLRExZUVpZTFlIQVdXQkxNV1hRWUxXVldPWQ==
+>R3JlYXQgam9iLiBKdWxpdXMgQ2Flc2VyIHdhcyBib3JuIGluIHRoZSAxMDAgQkM6ClBEQSBKQVRQIFlFTERBTiBHQVVPTVFXTkEgRU8gUERBIFdITERXWEFQTyBTRVBES1FQIEYKT1BYV09EUFNLUUxPTkNYUU5VSkVPTFhQV0FFSE1PVVpPRVFYWFZLVUpPV0JMTVdYUFFVSU9FTFBNWUtZRUhNT0dPS1lRWEFYS1lLRExZUVpZTFlIQVdXQkxNV1hRWUxXVldPWQ==
 
 After brute forcing the above text on a website with different-different encoding methods(Base64, CRC32. SHA Hashes etc etc), it was finally found that the above code is actually a Base64 code(Since when decoded using a Base-64 decoder, the instructions became clear in plain english) 
 
@@ -27,7 +27,7 @@ Using a relatively simple C++ program the message in the QR code was decoded and
 
 ## Third Challenge
 
-Great job. Julius Caeser was born in the 100 BC:
+>Great job. Julius Caeser was born in the 100 BC:
 PDA JATP YELDAN GAUOMQWNA EO PDA WHLDWXAPO SEPDKQP F
 OPXWODPSKQLONCXQNUJEOLXPWAEHMOUZOEQXXVKUJOWBLMWXPQUIOELPMYKYEHMOGOKYQXAXKYKDLYQZYLYHAWWBLMWXQYLWVWOY
 
@@ -42,7 +42,7 @@ The text gave away that Ceaser Cipher with an offset of 100 was used.
 ## Fourth Challenge
 After decoding the previous message using caesar cipher, the following message was obtained. 
 
-THE NEXT CIPHER KEYSQUARE IS THE ALPHABETS WITHOUT J
+>THE NEXT CIPHER KEYSQUARE IS THE ALPHABETS WITHOUT J
 STBASHTWOUPSRGBURYNISPBTAEILQSYDSIUBBZOYNSAFPQABTUYMSIPTQCOCILQSKSOCUBEBOCOHPCUDCPCLEAAFPQABUCPAZASC
 
 From the given message, it is clear that the cipher used uses a 'Cipher Keysquare' . Polybius and Playfair cipher were the two prime candidates. After some trial and error, it was found that Playfair Cipher was used with the KeySquare as  
@@ -84,7 +84,7 @@ Finally, after applying this process we get another instruction, but this time i
 
 The following text was obtained after the previous step
 
-RSAENCRYPTNUMBERTWOHUNDREDFOURTYTHREEWITHNVALUEASTWOTHOUSANDFOURHUNDREDANDNINETEENANDEVALUEASELEVENX 
+>RSAENCRYPTNUMBERTWOHUNDREDFOURTYTHREEWITHNVALUEASTWOTHOUSANDFOURHUNDREDANDNINETEENANDEVALUEASELEVENX 
 
 RSA ENCRYPT NUMBER TWO HUNDRED FOURTY THREE WITH NVALUE AS TWO THOUSAND FOUR HUNDRED AND NINETEEN AND EVALUE AS ELEVENX
 
@@ -107,8 +107,8 @@ From the previous task , the number 1982 was obtained. Not much was clear as to 
 ## Seventh and Final Challenge
 The contents of the dontsee.txt file were also encrypted without any hint about the method used to encrypt the message.
 
-TM, DTZ KTZSI RJ😔. HTSLWFYX. YMNX NX YMJ JSILTFQ. TW NX NY?🤨
+>TM, DTZ KTZSI RJ😔. HTSLWFYX. YMNX NX YMJ JSILTFQ. TW NX NY?🤨
 
  So , a brute force Caesar Cipher was tried and BOOM, for a +5 offset(from the original message), the hidden message was found which said 
 
- OH, YOU FOUND ME😔. CONGRATS. THIS IS THE ENDGOAL. OR IS IT?🤨
+ >OH, YOU FOUND ME😔. CONGRATS. THIS IS THE ENDGOAL. OR IS IT?🤨
