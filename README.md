@@ -7,7 +7,7 @@ The QR code in the vaccination certificate was altered since  verify.cowin.gov.i
 ## Second Challenge
 R3JlYXQgam9iLiBKdWxpdXMgQ2Flc2VyIHdhcyBib3JuIGluIHRoZSAxMDAgQkM6ClBEQSBKQVRQIFlFTERBTiBHQVVPTVFXTkEgRU8gUERBIFdITERXWEFQTyBTRVBES1FQIEYKT1BYV09EUFNLUUxPTkNYUU5VSkVPTFhQV0FFSE1PVVpPRVFYWFZLVUpPV0JMTVdYUFFVSU9FTFBNWUtZRUhNT0dPS1lRWEFYS1lLRExZUVpZTFlIQVdXQkxNV1hRWUxXVldPWQ==
 
-Upon further analysis, it was found that the code obtained from the QR code was indeed a BASE-64 code. 
+After brute forcing the above text on a website with different-different encoding methods(Base64, CRC32. SHA Hashes etc etc), it was finally found that the above code is actually a Base64 code(Since when decoded using a Base-64 decoder, the instructions became clear in plain english) 
 
 * ### Base-64 ->    
 
